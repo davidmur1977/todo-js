@@ -9,7 +9,7 @@ export  class Todo {
 
        tempTodo.id = id;
        tempTodo.completado = completado;
-       tempTodo.creado = creado;
+        tempTodo.creado = creado;
 
        return tempTodo;
    }

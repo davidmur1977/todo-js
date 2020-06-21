@@ -34,6 +34,11 @@ Es un empaquetador de módulos, permite:
     ```
     npm install webpack webpack-cli --save-dev
     ```
+    ó 
+   ```
+    npm i -D webpack webpack-cli 
+    ```
+
     *--save-dev* significa que la ponga como dependencia de desarrollo, ya que webpack no irá a producción.
 5. Añadir en *package.json* el par *"build":"webpack"*.Eso significa que cuando haga un build en desarrollo disparará webpack automáticamente.
    ![Alt](/package_json_build.png)
@@ -65,7 +70,44 @@ La opción *minimize:true* de la regla indica que no ponga comentarios en produc
  (ver imagen).
   
 
+# Webpack Dev Server
+Paquete que permite automáticamente cargar los cambios en el html, js que hagamos.
+
+Instalación:
+
+```
+npm i -D webpack-dev-server
+```
+Seguidamente en package.json añadimos 
+*"start":"webpack-dev-server --open"*.Esto le dice a webpack que apenas se levante webserver ábrelo.
+
+![Alt](/package_json_start.png)
+
+Se puede especificar el puerto añadiendo *--port=8081*.
+
+
+# Webpack production mode
+Una opción para traabajar en modo producción es en *webpack_confing.js*
+En *mode* indicar *production*.
+Lo mejor es crear un fichero aparte con configuración para producción.
+*webpack.prod.js*
+
+### Cómo indicar que trabajamos en produccón o desarrollo.
+En *package.json* indicamos en *"build" : "webpack"*, ese es modo desaroollo.
+Para indicar modo producción hay que modificar a *"build":"webpack --config webpack.prod.js"*
+
+Se podría crear un modo de **preproducción** para tener los archivos por ejemplo, pero sin minimizar, para hacer pruebas; entonces podríamos añadir:
+*"build:dev":"webpack --config webpack.config.js"* 
+
+ Para asegurarnos que se cargan las actualizaciones en producción, webpack creó el contentHash, sólo hay que indicarlo para que éste cambie y por lo tanto actualize los archivos del cliente.
+ Para ello en *webpack.prod.js* hay que escribir:
+ ```
+ output: {
+    filename: 'main.[contentHash].js'
+ }
+ ```
  
+
 
 
 # Webpack Starter

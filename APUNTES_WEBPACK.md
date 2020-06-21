@@ -107,9 +107,6 @@ Se podría crear un modo de **preproducción** para tener los archivos por ejemp
  }
  ```
  
-
-
-
 # Webpack Starter
 
 Este es el proyecto inicial para crear aplicaciones utilizando webpack.
@@ -124,3 +121,63 @@ Y para construir el build, recuerden:
 ```
 npm run build
 ```
+
+# Babel 
+Es una herramienta que permite traducir a versiones más antiguas de js.
+
+Instalación:
+```
+npm install --save-deb babel-loader @babel/core
+
+(ó npm i -D babel-loader @babel/core)
+```
+
+1. En *webpack.prod.js* hay que añadir la regla:
+
+![Alt](/babel1.png)
+
+2. En */src* hay que crear el fichero *.babelrc*
+
+   2.0. Instalar el paquete de minimizar:
+
+      ```
+      npm install babel-preset-minify --save-dev
+      ```
+   2.1. Añadir en .babelrc:
+     
+     ```
+     {
+        "presets":["minify"]
+     }
+     ```
+   2.2. Añadir un último paquete para instalar un plugin:
+       ```
+       npm install babel-minify-webpack-plugin --save-dev
+       ```
+       Añadirlo a webpack.pdor.js como los otros plugins...
+
+Traducción de términos a versiones más anteriores
+1. Hay que instalar un paquete:
+
+```
+npm install --save-dev @babel/preset-env
+```
+2. Añadir el paquete en .babelrc
+
+```
+     {
+        "presets":["@babel/preset-env", "minify"]
+     }
+```
+
+# Limpiando la carpeta Dist
+    
+Al hacer el build, se debe borrar *Dist* para hacer efectivos los cambios.
+Esto es tedioso; para hacerlo de forma automatizada hacemos:
+
+```
+npm install --save-dev clean-webpack-plugin
+```
+Añadir el plugin en el js de producción (también se puede añadir al de desarrollo).Ver el fichero de ejemplo.
+
+

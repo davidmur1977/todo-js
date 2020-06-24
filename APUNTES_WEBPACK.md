@@ -28,7 +28,7 @@ Es un empaquetador de módulos, permite:
       Dentro de esa carpeta irá la estructura del proyecto(carpet *js*, carpeta *css*, *index.html*...Etc)
 4. Desde la [Web](https://webpack.js.org/guides/getting-started/) de       
    Webpack seguimos el procedimiento de instalar webpack:
-    ### Ojo: Hay que situarse en el directorio donde esta *package.json*!!!.
+    ### Ojo: Hay que situarse en el directorio donde está *package.json*!!!.
 
     Instalación manual:
     ```

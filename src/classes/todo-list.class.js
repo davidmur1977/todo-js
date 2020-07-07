@@ -8,9 +8,6 @@ export class TodoList {
         //this.todos = [];
     }
 
-
-
-
     nuevoTodo(todo){
         this.todos.push(todo);
         this.guardarLocalStorage();
@@ -36,6 +33,13 @@ export class TodoList {
              }
          }
     }
+
+    //contamos los pendientes
+    contarPendientes(){
+       let total = this.todos.filter( todo => !todo.completado);
+       return total.length;
+    }
+
 
     //filtra los que estén completados
     eliminarCompletados() {

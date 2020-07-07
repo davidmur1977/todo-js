@@ -49,6 +49,7 @@ body {
 	            0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
 
+
 .todoapp input::-webkit-input-placeholder {
 	font-style: italic;
 	font-weight: 300;
@@ -510,6 +511,13 @@ hr {
 	background-color: rgba(255, 255, 255, .6);
 	transition-property: left;
 	transition-duration: 500ms;
+}
+
+.container{
+	text-align: center;
+}
+.form-check-inline{
+	display: inline-block;
 }
 
 @media (min-width: 899px) {

@@ -40,8 +40,7 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            esModule: false,
-                            name: 'assets/[name].[ext]'
+                            esModule: false
                         }
                     }
                 ]
@@ -60,7 +59,7 @@ module.exports = {
 
         new CopyPlugin({
             patterns:[
-            { from: 'src/assets/', to: 'assets/'}
+            { from: './src/assets/', to: 'assets'}
 
             ]
              }),
